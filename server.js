@@ -1,10 +1,11 @@
-/*
-Challenge: 
-1. Initialise a nodejs project:
-	Name: “from-the-other-side”.
-    Description: “A platform for sharing ghostly encounters”.
+import http from "node:http"
 
-2. Enable modular js (in package.json).
+const PORT = 8000
 
-hint.md for help
-*/
+const server = http.createServer((req, res) => {
+    res.setHeader("Content-Type", "text/html")
+    res.statusCode = 200
+    res.end("<html><h1>Hello this is my first server message</h1></html>")
+} )
+
+server.listen(PORT, () => console.log("Hurrayyy"))
