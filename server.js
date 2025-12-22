@@ -1,14 +1,14 @@
 import http from "node:http";
 import { serveStatic } from "./utils/serveStatic.js";
 
-const PORT = 8000;
+const PORT = 5000;
 
 const __dirname = import.meta.dirname;
 
 // console.log("Cwd: ", process.cwd(), import.meta.dirname)
 
 const server = http.createServer(async (req, res) => {
-	await serveStatic(res, __dirname);
+	await serveStatic(req, res, __dirname);
 
 	// console.log(pathToResource);
 
