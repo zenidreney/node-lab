@@ -1,7 +1,8 @@
 const form = document.getElementById("eventForm")
 const formMessageText = document.getElementsByClassName("form-message-text")[0]
 
-form.addEventListener("submit", async function (event) {
+
+form.addEventListener("submit", async (event) => {
   event.preventDefault()
 
   const location = document.getElementById("location").value
@@ -49,6 +50,10 @@ form.addEventListener("submit", async function (event) {
       },
       body: JSON.stringify(formData),
     })
+
+    const data = await response.json()
+    console.log(data)
+
     if (response.ok) {
       formMessageText.innerHTML = `Your sighting was uploaded. View it <a href="./sightings.html">here</a>.`;
       form.reset()
