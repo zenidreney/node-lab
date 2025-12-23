@@ -20,7 +20,7 @@ export async function serveStatic(req, res, baseDir) {
 	try {
 		const content = await fs.readFile(filePath);
 		const ext = path.extname(filePath);
-		console.log(ext);
+		// console.log(ext);
 		const contentType = getContentType(ext);
 
 		console.log(contentType);
@@ -28,7 +28,7 @@ export async function serveStatic(req, res, baseDir) {
 	} catch (err) {
 		console.log(err.code);
 		if (err.code === "ENOENT") {
-			console.log("eno yo");
+			// console.log("eno yo");
 			const content = await fs.readFile(path.join(publicDir, "404.html"));
 			// const ext = path.extname("/home/zenid/node-lab/public/404.html");
 			// console.log(ext);
