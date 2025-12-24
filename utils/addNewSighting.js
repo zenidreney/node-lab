@@ -7,7 +7,7 @@ export async function addNewSighting(newSighting) {
 
     const sightings = await getData()
     sightings.push(newSighting)
-    console.log(sightings)
+    // console.log(sightings)
     const pathJson = path.join("data", "data.json")
     // console.log(pathJson)
     await fs.writeFile(pathJson, JSON.stringify(sightings, null, 2), "utf-8")
